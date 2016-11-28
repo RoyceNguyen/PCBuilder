@@ -8,7 +8,8 @@
     tools:context="rnb.pcbuilder.MainActivity"
     tools:showIn="@layout/app_bar_main"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:id="@+id/contentMain">
 
 
     <TextView

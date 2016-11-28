@@ -33,7 +33,7 @@ public class ContactFragment extends Fragment {
     String name = "PCBuilder";
     String emailName = "PCBuilder@gmail.com";
     String company = "PCBuilder";
-    String phone = "5199999999"
+    String phone = "5199999999";
     private OnFragmentInteractionListener mListener;
 
     public ContactFragment() {
@@ -119,11 +119,11 @@ public class ContactFragment extends Fragment {
                 intent.putExtra(Intent.EXTRA_EMAIL, emailaddresses);
                 intent.putExtra(Intent.EXTRA_TITLE, "Question about PCBuilder");
                 intent.putExtra(Intent.EXTRA_SUBJECT, "How2build PC");
-                if (intent.resolveActivity(getPackageManager()) != null) {
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 }
                 else{
-                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
                             "No installed software to complete the task",Snackbar.LENGTH_SHORT);
                     snackbar.show();
                 }
