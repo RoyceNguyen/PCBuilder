@@ -18,7 +18,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        ContactFragment.OnFragmentInteractionListener {
+        ContactFragment.OnFragmentInteractionListener,CostFragment.OnFragmentInteractionListener,FAQFragment.OnFragmentInteractionListener,
+ListViewFragment.OnFragmentInteractionListener,MainFragment.OnFragmentInteractionListener,TipFragment.OnFragmentInteractionListener,TutorialFragment.OnFragmentInteractionListener{
 
     FragmentManager fm = getSupportFragmentManager();
 
@@ -90,12 +91,17 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_contact) {
+        if (id == R.id.nav_intro) {
+            FragmentTransaction tran = fm.beginTransaction();
+            tran.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+            tran.replace(R.id.contentMain, new MainFragment());
+            tran.commit();
+        }else  if (id == R.id.nav_contact) {
             FragmentTransaction tran = fm.beginTransaction();
             tran.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
             tran.replace(R.id.contentMain, new ContactFragment());
             tran.commit();
-        } else if (id == R.id.nav_tip) {
+        }else if (id == R.id.nav_tip) {
             FragmentTransaction tran = fm.beginTransaction();
             tran.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
             tran.replace(R.id.contentMain, new TipFragment());
