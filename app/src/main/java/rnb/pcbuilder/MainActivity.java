@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -16,7 +17,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,ContactFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        ContactFragment.OnFragmentInteractionListener {
+
+    FragmentManager fm = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FragmentTransaction trans = fm.beginTransaction();
+        trans.replace(R.id.contentMain, new MainFragment());
+        trans.commit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +93,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_contact) {
             FragmentTransaction tran = fm.beginTransaction();
             tran.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-            tran.replace(R.id.content_main, new ContactFragment());
+            tran.replace(R.id.contentMain, new ContactFragment());
             tran.commit();
         } else if (id == R.id.nav_gallery) {
 
