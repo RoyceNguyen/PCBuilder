@@ -95,16 +95,26 @@ public class MainActivity extends AppCompatActivity
             tran.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
             tran.replace(R.id.contentMain, new ContactFragment());
             tran.commit();
-        } else if (id == R.id.nav_gallery) {
-
+        } else if (id == R.id.nav_tip) {
+            FragmentTransaction tran = fm.beginTransaction();
+            tran.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+            tran.replace(R.id.contentMain, new TipFragment());
+            tran.commit();
         } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            FragmentTransaction tran = fm.beginTransaction();
+            tran.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+            tran.replace(R.id.contentMain, new TutorialFragment());
+            tran.commit();
+        } else if (id == R.id.nav_cost) {
+            FragmentTransaction tran = fm.beginTransaction();
+            tran.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+            tran.replace(R.id.contentMain, new CostFragment());
+            tran.commit();
+        } else if (id == R.id.nav_faq) {
+            FragmentTransaction tran = fm.beginTransaction();
+            tran.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+            tran.replace(R.id.contentMain, new FAQFragment());
+            tran.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
