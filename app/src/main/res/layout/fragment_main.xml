@@ -1,13 +1,25 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="rnb.pcbuilder.MainFragment">
+    tools:context="rnb.pcbuilder.MainFragment"
+    android:orientation="vertical"
+    android:background="@color/backgroundColor">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="PC Builder"
+        android:textSize="60sp"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
 
-</FrameLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView2"
+        android:src="@drawable/pc" />
+
+</LinearLayout>
