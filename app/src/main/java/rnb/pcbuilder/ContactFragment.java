@@ -1,12 +1,16 @@
 package rnb.pcbuilder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -26,7 +30,10 @@ public class ContactFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    String name = "PCBuilder";
+    String emailName = "PCBuilder@gmail.com";
+    String company = "PCBuilder";
+    String phone = "5199999999";
     private OnFragmentInteractionListener mListener;
 
     public ContactFragment() {
@@ -64,7 +71,68 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        View view = inflater.inflate(R.layout.fragment_contact, container, false);
+        Button location = (Button) view.findViewById(R.id.location);
+        Button contact = (Button) view.findViewById(R.id.phone);
+        Button email = (Button) view.findViewById(R.id.email);
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri geoLocation = Uri.parse("geo:0,0?q=42.2499779,-82.981237(PCBuilder)");
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(geoLocation);
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+                else{
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content), "No installed software to complete the task", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
+            }
+        });
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_INSERT);
+                intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
+                intent.putExtra(ContactsContract.Intents.Insert.NAME, name);
+                intent.putExtra(ContactsContract.Intents.Insert.EMAIL, emailName);
+                intent.putExtra(ContactsContract.Intents.Insert.COMPANY, company);
+                intent.putExtra(ContactsContract.Intents.Insert.PHONE , phone);
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+                else{
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete the task", Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
+
+            }
+        });
+        email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String[] emailaddresses = {"PCBuilder@gmail.com"};
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL, emailaddresses);
+                intent.putExtra(Intent.EXTRA_TITLE, "Question about PCBuilder");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "How2build PC");
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+                else{
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            "No installed software to complete the task",Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }
+            }
+        });
+
+
+
+        return view ;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
