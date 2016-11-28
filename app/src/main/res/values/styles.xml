@@ -17,4 +17,10 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="PCtheme" parent="AppTheme" >
+        <item name="android:colorBackground">@android:color/holo_blue_dark</item>
+        <item name="android:textColorPrimary">@color/design_textinput_error_color_light</item>
+        <item name="android:textColorPrimaryInverse">@color/abc_search_url_text</item>
+    </style>
+
 </resources>
