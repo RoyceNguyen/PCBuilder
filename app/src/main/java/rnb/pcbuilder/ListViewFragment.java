@@ -7,6 +7,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -26,6 +32,8 @@ public class ListViewFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    TextView ListViewTV;
+    ListView list;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,7 +72,63 @@ public class ListViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_view, container, false);
+        View view = inflater.inflate(R.layout.fragment_data_type, container, false);
+        ListViewTV = (TextView) view.findViewById(R.id.DataTypeDescription);
+        list = (ListView) view.findViewById(R.id.datatypelist);
+        ArrayList<DataTypeItem> datatypelist = new ArrayList<DataTypeItem>();
+        datatypelist.add(new DataTypeItem("String", "Stores text"));
+        datatypelist.add(new DataTypeItem("char", "Stores a character"));
+        datatypelist.add(new DataTypeItem("Boolean", "Stores true or false"));
+        datatypelist.add(new DataTypeItem("Int", "Stores a whole number"));
+        datatypelist.add(new DataTypeItem("double", "Stores a decimal number"));
+        datatypelist.add(new DataTypeItem("object", "Stores an object of an objects datatype"));
+        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, datatypelist);
+        CustomAdapter adapter1 = new CustomAdapter(getContext(), datatypelist);
+        list.setAdapter(adapter1);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                DataTypeItem item = (DataTypeItem) list.getItemAtPosition(position);
+                DataTypeDescriptionTextView.setText(item.getDescription());
+            }
+        });
+
+        return view;
+    }
+
+    public class CustomAdapter extends ArrayAdapter<DataTypeItem>{
+        public CustomAdapter(Context context, ArrayList<DataTypeItem> items){
+            super(context, 0, items);
+
+        }
+        public View getView(int position, View convertView, ViewGroup parent){
+            DataTypeItem item = getItem(position);
+
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_view, parent, false);
+            }
+            TextView name = (TextView) convertView.findViewById(R.id.name);
+            name.setText(item.getName());
+            return convertView;
+        }
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event

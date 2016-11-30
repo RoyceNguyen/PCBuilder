@@ -18,12 +18,12 @@ public class ListViewItem {
         this.name = name;
     }
 
-    public String getDescription() {
+    public String getTip() {
         return tip;
     }
 
-    public void setDescription(String description) {
-        this.tip = description;
+    public void setTip(String tip) {
+        this.tip = tip;
     }
 
     public String toString(){
