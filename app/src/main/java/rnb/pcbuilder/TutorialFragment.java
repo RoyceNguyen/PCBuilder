@@ -4,6 +4,9 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,8 +29,9 @@ public class TutorialFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private SectionPagerAdapter mSectionsPagerAdapter;
     private OnFragmentInteractionListener mListener;
+    private ViewPager mViewPager;
 
     public TutorialFragment() {
         // Required empty public constructor
@@ -64,7 +68,12 @@ public class TutorialFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tutorial, container, false);
+        View view = inflater.inflate(R.layout.fragment_tutorial, container, false);
+
+        mSectionsPagerAdapter = new SectionPagerAdapter(getChildFragmentManager());
+        mViewPager = (ViewPager)  view.findViewById(R.id.tutorialContent);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -104,5 +113,24 @@ public class TutorialFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public class SectionPagerAdapter extends FragmentPagerAdapter {
+        public SectionPagerAdapter(FragmentManager fm){
+            super(fm);
+        }
+        public Fragment getItem(int position)
+        {
+            switch(position){
+                case 0: return TutorialFragment.newInstance("Step 1: Get the proper screwdriver - usually a Phillips head screwdriver");
+                case 1: return TutorialFragment.newInstance("Step 2: Open the case - unscrew the thumbscrews on either side to open the case up");
+                case 2: return TutorialFragment.newInstance("Step 3: Install the CPU - Remove the CPU from the plastic and DO NOT touch the gold pins on the bottom. On the motherboard, push the CPU cover up then the lever on the side. Place the CPU in gently using the arrows to line it up");
+                case 3: return TutorialFragment.newInstance("Step 4: ");
+                default: return TutorialFragment.newInstance("Whoops");
+            }
+        }
+        public int getCount(){
+            return 4;
+        }
     }
 }
