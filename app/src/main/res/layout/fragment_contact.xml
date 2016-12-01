@@ -4,45 +4,52 @@
     android:layout_height="match_parent"
     tools:context="rnb.pcbuilder.ContactFragment"
     android:orientation="vertical"
-    android:background="@color/backgroundColor">
+    android:background="@color/backgroundColor"
+    android:weightSum="1">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="Contact Us!"
-        android:layout_weight="1"
         android:textSize="@dimen/titleText"
         android:gravity="center_horizontal"
         android:textStyle="bold"
         android:textColor="@color/textColor" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="We&apos;re here to help. If you have any questions regarding your PC needs feel free to come see us in store, give us a call or email us!"
+        android:id="@+id/textView2"
+        android:layout_weight="1.01"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="@dimen/regText" />
+
     <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="68dp"
         android:text="Find us"
         android:id="@+id/location"
-        android:layout_weight="3"
         android:background="@color/buttonColor"
         android:theme="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_margin="2dp" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="71dp"
         android:text="Call us"
         android:id="@+id/phone"
-        android:layout_weight="3"
         android:theme="@style/Base.Widget.AppCompat.Button.Colored"
         android:background="@color/buttonColor"
         android:layout_margin="3dp" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="71dp"
         android:text="Email Us"
         android:id="@+id/email"
-        android:layout_weight="3"
         android:singleLine="false"
         android:theme="@style/Base.Widget.AppCompat.Button.Colored"
         android:background="@color/buttonColor"

@@ -4,6 +4,9 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,8 +29,9 @@ public class TutorialFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private SectionPagerAdapter mSectionsPagerAdapter;
     private OnFragmentInteractionListener mListener;
+    private ViewPager mViewPager;
 
     public TutorialFragment() {
         // Required empty public constructor
@@ -64,7 +68,11 @@ public class TutorialFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tutorial, container, false);
+        View view = inflater.inflate(R.layout.fragment_tutorial, container, false);
+        mSectionsPagerAdapter = new SectionPagerAdapter(getActivity().getSupportFragmentManager());
+        mViewPager = (ViewPager)  view.findViewById(R.id.tutorialContent);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -104,5 +112,30 @@ public class TutorialFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public class SectionPagerAdapter extends FragmentPagerAdapter {
+        public SectionPagerAdapter(FragmentManager fm){
+            super(fm);
+        }
+        public Fragment getItem(int position)
+        {
+            switch(position){
+                case 0: return FactFragment.newInstance("Step 1:\n Get the proper screwdriver - Usually a Phillips head screwdriver");
+                case 1: return FactFragment.newInstance("Step 2:\n Open' the case - Unscrew the thumbscrews on either side to open the case up");
+                case 2: return FactFragment.newInstance("Step 3:\n Install the CPU - Remove the CPU from the plastic and DO NOT touch the gold pins on the bottom. On the motherboard, push the CPU cover up then the lever on the side. Place the CPU in gently using the arrows to line it up");
+                case 3: return FactFragment.newInstance("Step 4:\n Add the heatsink - The heastsink will fit right over the processor. It has 4 screws ");
+                case 4: return FactFragment.newInstance("Step 5:\n Install the RAM - Unlock the clips on the RAM slots, install the RAM in the correct slot then push down on both sides of the module");
+                case 5: return FactFragment.newInstance("Step 6:\n Install the motherboard - Place the motherboard in the case and place it in matching up with the ports. Secure the motherboard to the case once it is placed in position with the screws it came with");
+                case 6: return FactFragment.newInstance("Step 7:\n Install the graphics card - Remove the expansion slot covers on the back of the case, slide the GPU into place then push it down into the slot on the motherboard.");
+                case 7: return FactFragment.newInstance("Step 8:\n Install the hard drive - Secure your hard drive to the back of your hard drive bracket and slide it back into the bay");
+                case 8: return FactFragment.newInstance("Step 9:\n Install the power supply - Remove the thumbscrews securing your power supply bracket. Attach it to the bracket with supplied screws then thread the cables through the case");
+                case 9: return FactFragment.newInstance("Step 10:\n Attach all the cables - Attach all the cables to the designated spots, the GPU power pins and the PSU cable to the motherboard and the hard drive sata cable, CPU power pins, heatsink cables and finally the fans from the case");
+                default: return FactFragment.newInstance("Step 10:\n Attach all the cables - Attach all the cables to the designated spots, the GPU power pins and the PSU cable to the motherboard and the hard drive sata cable, CPU power pins, heatsink cables and finally the fans from the case");
+            }
+        }
+        public int getCount(){
+            return 10;
+        }
     }
 }

@@ -2,14 +2,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="rnb.pcbuilder.TutorialFragment"
-    android:background="@color/backgroundColor">
+    tools:context="rnb.pcbuilder.FactFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <android.support.v4.view.ViewPager
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/tutorialContent"
-        android:layout_gravity="right|top" />
+        android:text="@string/hello_blank_fragment"
+        android:gravity="center_vertical|center_horizontal"
+        android:id="@+id/factContent"
+        android:padding="10dp"
+        android:textSize="@dimen/regText"
+        android:background="@color/backgroundColor" />
+
 </FrameLayout>
