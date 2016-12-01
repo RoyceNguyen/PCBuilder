@@ -18,8 +18,14 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        ContactFragment.OnFragmentInteractionListener,CostFragment.OnFragmentInteractionListener,FAQFragment.OnFragmentInteractionListener,
-ListViewFragment.OnFragmentInteractionListener,MainFragment.OnFragmentInteractionListener,TipFragment.OnFragmentInteractionListener,TutorialFragment.OnFragmentInteractionListener{
+        ContactFragment.OnFragmentInteractionListener,
+        CostFragment.OnFragmentInteractionListener,
+        FAQFragment.OnFragmentInteractionListener,
+        ListViewFragment.OnFragmentInteractionListener,
+        MainFragment.OnFragmentInteractionListener,
+        TipFragment.OnFragmentInteractionListener,
+        TutorialFragment.OnFragmentInteractionListener,
+        FactFragment.OnFragmentInteractionListener {
 
     FragmentManager fm = getSupportFragmentManager();
 

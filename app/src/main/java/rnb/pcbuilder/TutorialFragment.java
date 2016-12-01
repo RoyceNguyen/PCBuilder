@@ -24,11 +24,11 @@ public class TutorialFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
-    //private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
-   // private String mParam2;
+    private String mParam2;
     private SectionPagerAdapter mSectionsPagerAdapter;
     private OnFragmentInteractionListener mListener;
     private ViewPager mViewPager;
@@ -42,15 +42,15 @@ public class TutorialFragment extends Fragment {
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
-     //* @param param2 Parameter 2.
+     * @param param2 Parameter 2.
      * @return A new instance of fragment TutorialFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TutorialFragment newInstance(String param1 /*,String param2*/) {
+    public static TutorialFragment newInstance(String param1, String param2) {
         TutorialFragment fragment = new TutorialFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
-       // args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,7 +60,7 @@ public class TutorialFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
-           // mParam2 = getArguments().getString(ARG_PARAM2);
+            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -69,7 +69,6 @@ public class TutorialFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tutorial, container, false);
-
         mSectionsPagerAdapter = new SectionPagerAdapter(getActivity().getSupportFragmentManager());
         mViewPager = (ViewPager)  view.findViewById(R.id.tutorialContent);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -122,21 +121,21 @@ public class TutorialFragment extends Fragment {
         public Fragment getItem(int position)
         {
             switch(position){
-                case 0: return TutorialFragment.newInstance("Step 1:\n Get the proper screwdriver - Usually a Phillips head screwdriver");
-                case 1: return TutorialFragment.newInstance("Step 2:\n Open' the case - Unscrew the thumbscrews on either side to open the case up");
-                case 2: return TutorialFragment.newInstance("Step 3:\n Install the CPU - Remove the CPU from the plastic and DO NOT touch the gold pins on the bottom. On the motherboard, push the CPU cover up then the lever on the side. Place the CPU in gently using the arrows to line it up");
-                case 3: return TutorialFragment.newInstance("Step 4:\n Add the heatsink - The heastsink will fit right over the processor. It has 4 screws ");
-                case 4: return TutorialFragment.newInstance("Step 5:\n Install the RAM - Unlock the clips on the RAM slots, install the RAM in the correct slot then push down on both sides of the module");
-                case 5: return TutorialFragment.newInstance("Step 6:\n Install the motherboard - Place the motherboard in the case and place it in matching up with the ports. Secure the motherboard to the case once it is placed in position with the screws it came with");
-                case 6: return TutorialFragment.newInstance("Step 7:\n Install the graphics card - Remove the expansion slot covers on the back of the case, slide the GPU into place then push it down into the slot on the motherboard.");
-                case 7: return TutorialFragment.newInstance("Step 8:\n Install the hard drive - Secure your hard drive to the back of your hard drive bracket and slide it back into the bay");
-                case 8: return TutorialFragment.newInstance("Step 9:\n Install the power supply - Remove the thumbscrews securing your power supply bracket. Attach it to the bracket with supplied screws then thread the cables through the case");
-                case 9: return TutorialFragment.newInstance("Step 10:\n Attach all the cables - Attach all the cables to the designated spots, the GPU power pins and the PSU cable to the motherboard and the hard drive sata cable, CPU power pins, heatsink cables and finally the fans from the case");
-                default: return TutorialFragment.newInstance("Step 10:\n Attach all the cables - Attach all the cables to the designated spots, the GPU power pins and the PSU cable to the motherboard and the hard drive sata cable, CPU power pins, heatsink cables and finally the fans from the case");
+                case 0: return FactFragment.newInstance("Step 1:\n Get the proper screwdriver - Usually a Phillips head screwdriver");
+                case 1: return FactFragment.newInstance("Step 2:\n Open' the case - Unscrew the thumbscrews on either side to open the case up");
+                case 2: return FactFragment.newInstance("Step 3:\n Install the CPU - Remove the CPU from the plastic and DO NOT touch the gold pins on the bottom. On the motherboard, push the CPU cover up then the lever on the side. Place the CPU in gently using the arrows to line it up");
+                case 3: return FactFragment.newInstance("Step 4:\n Add the heatsink - The heastsink will fit right over the processor. It has 4 screws ");
+                case 4: return FactFragment.newInstance("Step 5:\n Install the RAM - Unlock the clips on the RAM slots, install the RAM in the correct slot then push down on both sides of the module");
+                case 5: return FactFragment.newInstance("Step 6:\n Install the motherboard - Place the motherboard in the case and place it in matching up with the ports. Secure the motherboard to the case once it is placed in position with the screws it came with");
+                case 6: return FactFragment.newInstance("Step 7:\n Install the graphics card - Remove the expansion slot covers on the back of the case, slide the GPU into place then push it down into the slot on the motherboard.");
+                case 7: return FactFragment.newInstance("Step 8:\n Install the hard drive - Secure your hard drive to the back of your hard drive bracket and slide it back into the bay");
+                case 8: return FactFragment.newInstance("Step 9:\n Install the power supply - Remove the thumbscrews securing your power supply bracket. Attach it to the bracket with supplied screws then thread the cables through the case");
+                case 9: return FactFragment.newInstance("Step 10:\n Attach all the cables - Attach all the cables to the designated spots, the GPU power pins and the PSU cable to the motherboard and the hard drive sata cable, CPU power pins, heatsink cables and finally the fans from the case");
+                default: return FactFragment.newInstance("Step 10:\n Attach all the cables - Attach all the cables to the designated spots, the GPU power pins and the PSU cable to the motherboard and the hard drive sata cable, CPU power pins, heatsink cables and finally the fans from the case");
             }
         }
         public int getCount(){
-            return 4;
+            return 10;
         }
     }
 }
