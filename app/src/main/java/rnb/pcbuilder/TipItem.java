@@ -1,11 +1,11 @@
 package rnb.pcbuilder;
 
 
-public class ListViewItem {
+public class TipItem {
     private String name;
     private String tip;
 
-    public ListViewItem(String name, String tip){
+    public TipItem(String name, String tip){
         this.name = name;
         this.tip = tip;
     }

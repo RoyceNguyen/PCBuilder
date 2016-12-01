@@ -2,11 +2,8 @@ package rnb.pcbuilder;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,7 +16,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         ContactFragment.OnFragmentInteractionListener,CostFragment.OnFragmentInteractionListener,FAQFragment.OnFragmentInteractionListener,
-ListViewFragment.OnFragmentInteractionListener,MainFragment.OnFragmentInteractionListener,TipFragment.OnFragmentInteractionListener,TutorialFragment.OnFragmentInteractionListener{
+TipFragment.OnFragmentInteractionListener,MainFragment.OnFragmentInteractionListener,TipFragment.OnFragmentInteractionListener,TutorialFragment.OnFragmentInteractionListener{
 
     FragmentManager fm = getSupportFragmentManager();
 
