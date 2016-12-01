@@ -12,8 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textSize="@dimen/titleText"
+        android:textStyle="bold"
+        android:text="FAQ" />
 
     <ListView
         android:id="@+id/TipList"
