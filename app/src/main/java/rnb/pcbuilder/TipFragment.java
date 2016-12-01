@@ -32,7 +32,7 @@ public class TipFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    TextView ListViewTV;
+    TextView TipTextView;
     ListView list;
 
     private OnFragmentInteractionListener mListener;
@@ -72,37 +72,37 @@ public class TipFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_data_type, container, false);
-        ListViewTV = (TextView) view.findViewById(R.id.DataTypeDescription);
-        list = (ListView) view.findViewById(R.id.datatypelist);
-        ArrayList<DataTypeItem> datatypelist = new ArrayList<DataTypeItem>();
-        datatypelist.add(new DataTypeItem("String", "Stores text"));
-        datatypelist.add(new DataTypeItem("char", "Stores a character"));
-        datatypelist.add(new DataTypeItem("Boolean", "Stores true or false"));
-        datatypelist.add(new DataTypeItem("Int", "Stores a whole number"));
-        datatypelist.add(new DataTypeItem("double", "Stores a decimal number"));
-        datatypelist.add(new DataTypeItem("object", "Stores an object of an objects datatype"));
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, datatypelist);
-        CustomAdapter adapter1 = new CustomAdapter(getContext(), datatypelist);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        TipTextView = (TextView) view.findViewById(R.id.tipListDescription);
+        list = (ListView) view.findViewById(R.id.TipList);
+        ArrayList<TipItem> tiplist = new ArrayList<TipItem>();
+        tiplist.add(new TipItem("String", "Stores text"));
+        tiplist.add(new TipItem("char", "Stores a character"));
+        tiplist.add(new TipItem("Boolean", "Stores true or false"));
+        tiplist.add(new TipItem("Int", "Stores a whole number"));
+        tiplist.add(new TipItem("double", "Stores a decimal number"));
+        tiplist.add(new TipItem("object", "Stores an object of an objects datatype"));
+        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, tiplist);
+        CustomAdapter adapter1 = new CustomAdapter(getContext(), tiplist);
         list.setAdapter(adapter1);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                DataTypeItem item = (DataTypeItem) list.getItemAtPosition(position);
-                DataTypeDescriptionTextView.setText(item.getDescription());
+                TipItem item = (TipItem) list.getItemAtPosition(position);
+                TipTextView.setText(item.getTip());
             }
         });
 
         return view;
     }
 
-    public class CustomAdapter extends ArrayAdapter<DataTypeItem>{
-        public CustomAdapter(Context context, ArrayList<DataTypeItem> items){
+    public class CustomAdapter extends ArrayAdapter<TipItem>{
+        public CustomAdapter(Context context, ArrayList<TipItem> items){
             super(context, 0, items);
 
         }
         public View getView(int position, View convertView, ViewGroup parent){
-            DataTypeItem item = getItem(position);
+            TipItem item = getItem(position);
 
             if (convertView == null) {
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_view, parent, false);
@@ -113,23 +113,7 @@ public class TipFragment extends Fragment {
         }
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

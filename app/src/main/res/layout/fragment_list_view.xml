@@ -12,15 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="@string/castTitle"
-        android:textSize="@dimen/titleSize"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <ListView
-        android:id="@+id/castList"
+        android:id="@+id/TipList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"></ListView>
+        android:layout_weight="1" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,11 +27,11 @@
         android:layout_weight="2">
 
         <TextView
-            android:id="@+id/castListDescription"
+            android:id="@+id/tipListDescription"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="2dp"
-            android:textSize="@dimen/textSize" />
+            android:textSize="12sp" />
     </ScrollView>
 
 </LinearLayout>
