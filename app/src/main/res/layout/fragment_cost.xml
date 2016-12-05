@@ -274,9 +274,10 @@
                 android:textStyle="bold"
                 android:layout_columnSpan="1"
                 android:layout_column="0"
+                android:gravity="left"
                 android:paddingRight="6dp"
-                android:textSize="@dimen/titleText"
-                android:gravity="bottom" />
+                android:textSize="@dimen/titleText" />
+
 
             <TextView
             android:layout_width="match_parent"
@@ -285,8 +286,9 @@
                 android:id="@+id/totalTextView"
                 android:background="@color/buttonColor"
                 android:elevation="4dp"
+                android:gravity="center_vertical|center_horizontal"
                 android:textAlignment="gravity"
-                android:gravity="center|center_vertical|center_horizontal"
+
                 android:textSize="@dimen/regText" />
         </TableRow>
 
