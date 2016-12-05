@@ -250,7 +250,7 @@ public class CostFragment extends Fragment {
     }
 
     public void calculate(){
-        double total = radioGroup1Value + radioGroup2Value + radioGroup3Value + radioGroup4Value+ radioGroup5Value + radioGroup6Value;
-        totalTextView.setText(currencyFormat.format(total));
+        totalAmount = radioGroup1Value + radioGroup2Value + radioGroup3Value + radioGroup4Value+ radioGroup5Value + radioGroup6Value;
+        totalTextView.setText(currencyFormat.format(totalAmount));
     }
 }
