@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,4 +7,265 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:useDefaultMargins="true"
+        android:columnCount="2"
+        android:rowCount="20">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Cost Estimator"
+            android:id="@+id/textView17"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:gravity="center_horizontal|clip_horizontal"
+            android:layout_columnSpan="2"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/titleText"
+            android:textStyle="bold"
+            android:padding="@dimen/titleMargin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="CPU"
+            android:id="@+id/textView18"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:textStyle="bold"
+            android:paddingRight="80dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dual Core"
+            android:id="@+id/checkBox"
+            android:layout_column="0"
+            android:paddingRight="80dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quad Core"
+            android:id="@+id/checkBox2"
+            android:layout_column="0"
+            android:checked="false"
+            android:paddingRight="80dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hexa Core"
+            android:id="@+id/checkBox3"
+            android:layout_column="0"
+            android:checked="false"
+            android:paddingRight="80dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Motherboard"
+            android:id="@+id/textView19"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low end"
+            android:id="@+id/checkBox4"
+            android:layout_column="1"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mid tier"
+            android:id="@+id/checkBox5"
+            android:layout_column="1"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High end"
+            android:id="@+id/checkBox6"
+            android:layout_column="1"
+            android:checked="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Ram"
+            android:id="@+id/textView20"
+            android:layout_column="0"
+            android:paddingTop="20dp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 GB"
+            android:id="@+id/checkBox7"
+            android:layout_column="0"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8 GB"
+            android:id="@+id/checkBox8"
+            android:layout_column="0"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16 GB"
+            android:id="@+id/checkBox9"
+            android:layout_column="0"
+            android:checked="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="GPU"
+            android:id="@+id/textView21"
+            android:layout_column="1"
+            android:layout_row="5"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low end"
+            android:id="@+id/checkBox11"
+            android:layout_column="1"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mid tier"
+            android:id="@+id/checkBox10"
+            android:layout_column="1"
+            android:checked="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High end"
+            android:id="@+id/checkBox12"
+            android:layout_column="1"
+            android:checked="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Storage"
+                android:id="@+id/textView22"
+                android:layout_column="0"
+                android:layout_row="10"
+                android:paddingTop="20dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HDD"
+                android:id="@+id/checkBox13"
+                android:layout_column="0"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SSD"
+                android:id="@+id/checkBox14"
+                android:layout_column="0"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HDD + SSD"
+                android:id="@+id/checkBox15"
+                android:layout_column="0"
+                android:checked="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Power Supply"
+                android:id="@+id/textView24"
+                android:textStyle="bold"
+                android:layout_column="1"
+                android:layout_row="10" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="400W"
+                android:id="@+id/checkBox16"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="600W"
+                android:id="@+id/checkBox17"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1200W"
+                android:id="@+id/checkBox18"
+                android:checked="false" />
+
+        </GridLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="177dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Total:"
+                android:id="@+id/totalLabel"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:layout_columnSpan="1"
+                android:layout_column="0"
+                android:gravity="right"
+                android:paddingRight="6dp" />
+
+            <TextView
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/totalTextView"
+                android:elevation="4dp"
+                android:background="@color/buttonColor" />
+        </TableRow>
+
+    </LinearLayout>
+</ScrollView>

@@ -14,7 +14,8 @@
         android:gravity="center_horizontal"
         android:textSize="@dimen/titleText"
         android:textStyle="bold"
-        android:text="FAQ" />
+        android:text="PC Building Tips"
+        android:textColor="@color/textColor" />
 
     <ListView
         android:id="@+id/TipList"
@@ -33,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="2dp"
-            android:textSize="12sp" />
+            android:textSize="30sp" />
     </ScrollView>
 
 </LinearLayout>
