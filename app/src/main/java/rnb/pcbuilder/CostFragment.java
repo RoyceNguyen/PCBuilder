@@ -31,6 +31,16 @@ public class CostFragment extends Fragment {
     private RadioGroup radioGroup4;
     private RadioGroup radioGroup5;
     private RadioGroup radioGroup6;
+
+    private int radioGroup1Value = 0;
+    private int radioGroup2Value = 0;
+    private int radioGroup3Value = 0;
+    private int radioGroup4Value = 0;
+    private int radioGroup5Value = 0;
+    private int radioGroup6Value = 0;
+
+    private int value = 0;
+
     private static final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
 
     // TODO: Rename parameter arguments, choose names that match
@@ -83,121 +93,118 @@ public class CostFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cost, container, false);
         TextView totalTextView = (TextView)view.findViewById(R.id.totalTextView);
-        RadioGroup radioGroup6 = (RadioGroup)view.findViewById(R.id.radioGroup6);
-        RadioGroup radioGroup5 = (RadioGroup)view.findViewById(R.id.radioGroup5);
-        RadioGroup radioGroup4 = (RadioGroup)view.findViewById(R.id.radioGroup4);
-        RadioGroup radioGroup3 = (RadioGroup)view.findViewById(R.id.radioGroup3);
-        RadioGroup radioGroup2 = (RadioGroup)view.findViewById(R.id.radioGroup2);
-        RadioGroup radioGroup1 = (RadioGroup)view.findViewById(R.id.radioGroup1);
+        radioGroup6 = (RadioGroup)view.findViewById(R.id.radioGroup6);
+         radioGroup5 = (RadioGroup)view.findViewById(R.id.radioGroup5);
+         radioGroup4 = (RadioGroup)view.findViewById(R.id.radioGroup4);
+         radioGroup3 = (RadioGroup)view.findViewById(R.id.radioGroup3);
+         radioGroup2 = (RadioGroup)view.findViewById(R.id.radioGroup2);
+         radioGroup1 = (RadioGroup)view.findViewById(R.id.radioGroup1);
 
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        int value = 100;
+                        //int value = 100;
                         switch (checkedId) {
                             case R.id.cpu1:
-                                value = 100;
+                                radioGroup1Value = 100;
                                 break;
                             case R.id.cpu2:
-                                value = 200;
+                                radioGroup1Value = 200;
                                 break;
                             case R.id.cpu3:
-                                value = 300;
+                                radioGroup1Value = 300;
                                 break;
                         }
-                        //calculate(value);
-
+                        calculate();
             }
         });
         radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                int value = 60;
+                //int value = 60;
                 switch (checkedId) {
                     case R.id.mb1:
-                        value = 60;
+                        radioGroup2Value = 60;
                         break;
                     case R.id.mb2:
-                        value = 150;
+                        radioGroup2Value = 150;
                         break;
                     case R.id.mb3:
-                        value = 250;
+                        radioGroup2Value = 250;
                         break;
                 }
-                //calculate(value);
+                calculate();
             }
         });
         radioGroup3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                int value = 30;
+                //int value = 30;
                 switch (checkedId) {
                     case R.id.ram1:
-                        value = 30;
+                        radioGroup3Value = 30;
                         break;
                     case R.id.ram2:
-                        value = 60;
+                        radioGroup3Value = 60;
                         break;
                     case R.id.ram3:
-                        value = 120;
+                        radioGroup3Value = 120;
                         break;
                 }
-                //calculate(value);
+                calculate();
             }
         });
         radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                int value = 180;
+                //int value = 180;
                 switch (checkedId) {
                     case R.id.gpu1:
-                        value = 180;
+                        radioGroup4Value = 180;
                         break;
                     case R.id.gpu2:
-                        value = 350;
+                        radioGroup4Value = 350;
                         break;
                     case R.id.gpu3:
-                        value = 800;
+                        radioGroup4Value = 800;
                         break;
                 }
-               // calculate(value);
+               calculate();
             }
         });
         radioGroup5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                int value = 60;
+                //int value = 60;
                 switch (checkedId) {
                     case R.id.storage1:
-                        value = 60;
+                        radioGroup5Value = 60;
                         break;
                     case R.id.storage2:
-                        value = 120;
+                        radioGroup5Value = 120;
                         break;
                     case R.id.storage3:
-                        value = 250;
+                        radioGroup5Value = 250;
                         break;
                 }
-                //calculate(value);
+                calculate();
             }
         });
         radioGroup6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                int value = 60;
+                //int value = 60;
                 switch (checkedId) {
                     case R.id.ps1:
-                        value = 60;
+                        radioGroup6Value = 60;
                         break;
                     case R.id.ps2:
-                        value = 120;
+                        radioGroup6Value = 120;
                         break;
                     case R.id.ps3:
-                        value = 220;
+                        radioGroup6Value = 220;
                         break;
                 }
-                //calculate(value);
+                calculate();
             }
         });
 
         totalTextView.setText(currencyFormat.format(0));
-
-
 
         return view;
     }
@@ -243,7 +250,7 @@ public class CostFragment extends Fragment {
     }
 
     public void calculate(){
-        //double total = radioGroup1 + radioGroup2 + radioGroup3 + radioGroup4 + radioGroup5 + radioGroup6;
-        //totalTextView.setText(currencyFormat.format(total));
+        double total = radioGroup1Value + radioGroup2Value + radioGroup3Value + radioGroup4Value+ radioGroup5Value + radioGroup6Value;
+        totalTextView.setText(currencyFormat.format(total));
     }
 }
