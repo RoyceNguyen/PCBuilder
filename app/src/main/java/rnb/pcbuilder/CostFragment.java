@@ -93,8 +93,6 @@ public class CostFragment extends Fragment {
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                (new RadioGroup.OnCheckedChangeListener() {
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
                         int value = 100;
                         switch (checkedId) {
                             case R.id.cpu1:
@@ -107,11 +105,10 @@ public class CostFragment extends Fragment {
                                 value = 300;
                                 break;
                         }
-                        calculate(value);
-                    }
-                });
+                        //calculate(value);
+
             }
-        })
+        });
         radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 int value = 60;
@@ -126,7 +123,7 @@ public class CostFragment extends Fragment {
                         value = 250;
                         break;
                 }
-                calculate(value);
+                //calculate(value);
             }
         });
         radioGroup3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -143,7 +140,7 @@ public class CostFragment extends Fragment {
                         value = 120;
                         break;
                 }
-                calculate(value);
+                //calculate(value);
             }
         });
         radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -160,7 +157,7 @@ public class CostFragment extends Fragment {
                         value = 800;
                         break;
                 }
-                calculate(value);
+               // calculate(value);
             }
         });
         radioGroup5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -177,7 +174,7 @@ public class CostFragment extends Fragment {
                         value = 250;
                         break;
                 }
-                calculate(value);
+                //calculate(value);
             }
         });
         radioGroup6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -194,7 +191,7 @@ public class CostFragment extends Fragment {
                         value = 220;
                         break;
                 }
-                calculate(value);
+                //calculate(value);
             }
         });
 
@@ -246,7 +243,7 @@ public class CostFragment extends Fragment {
     }
 
     public void calculate(){
-        double total = radioGroup1 + radioGroup2 + radioGroup3 + radioGroup4 + radioGroup5 + radioGroup6;
-        totalTextView.setText(currencyFormat.format(total));
+        //double total = radioGroup1 + radioGroup2 + radioGroup3 + radioGroup4 + radioGroup5 + radioGroup6;
+        //totalTextView.setText(currencyFormat.format(total));
     }
 }
