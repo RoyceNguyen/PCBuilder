@@ -22,8 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/DataTypeDescription"
-            android:textSize="18sp"
-            android:padding="2dp"/>
+            android:padding="2dp"
+            android:textIsSelectable="false" />
     </ScrollView>
 
 </LinearLayout>
