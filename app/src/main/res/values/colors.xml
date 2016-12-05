@@ -6,5 +6,5 @@
     <color name="backgroundColor">#696969</color>
     <color name="nav_mainColor">#d2b48c</color>
     <color name="textColor">#6495ed</color>
-    <color name="buttonColor">#4682B4</color>
+    <color name="buttonColor">#4682b4</color>
 </resources>

@@ -32,7 +32,7 @@
             android:textColor="@color/textColor"
             android:textSize="@dimen/titleText"
             android:textStyle="bold"
-            android:padding="@dimen/titleMargin" />
+            android:paddingBottom="@dimen/titleMargin" />
 
             <RadioGroup android:id="@+id/radioGroup1">
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="CPU"
-            android:id="@+id/textView18"
+            android:id="@+id/cpuText"
             android:layout_column="0"
             android:layout_row="1"
             android:textStyle="bold"
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dual Core"
-            android:id="@+id/checkBox"
+            android:id="@+id/cpu1"
             android:layout_column="0"
             android:paddingRight="80dp" />
 
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quad Core"
-            android:id="@+id/checkBox2"
+            android:id="@+id/cpu2"
             android:layout_column="0"
             android:checked="false"
             android:paddingRight="80dp" />
@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hexa Core"
-            android:id="@+id/checkBox3"
+            android:id="@+id/cpu3"
             android:layout_column="0"
             android:checked="false"
             android:paddingRight="80dp" />
@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Low end"
-            android:id="@+id/checkBox4"
+            android:id="@+id/mb1"
             android:layout_column="1"
             android:checked="false" />
 
@@ -96,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mid tier"
-            android:id="@+id/checkBox5"
+            android:id="@+id/mb2"
             android:layout_column="1"
             android:checked="false" />
 
@@ -104,7 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="High end"
-            android:id="@+id/checkBox6"
+            android:id="@+id/mb3"
             android:layout_column="1"
             android:checked="false" />
             </RadioGroup>
@@ -125,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4 GB"
-            android:id="@+id/checkBox7"
+            android:id="@+id/ram1"
             android:layout_column="0"
             android:checked="false" />
 
@@ -133,7 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="8 GB"
-            android:id="@+id/checkBox8"
+            android:id="@+id/ram2"
             android:layout_column="0"
             android:checked="false" />
 
@@ -141,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="16 GB"
-            android:id="@+id/checkBox9"
+            android:id="@+id/ram3"
             android:layout_column="0"
             android:checked="false" />
             </RadioGroup>
@@ -163,7 +163,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Low end"
-            android:id="@+id/checkBox11"
+            android:id="@+id/gpu1"
             android:layout_column="1"
             android:checked="false" />
 
@@ -171,7 +171,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mid tier"
-            android:id="@+id/checkBox10"
+            android:id="@+id/gpu2"
             android:layout_column="1"
             android:checked="false" />
 
@@ -179,7 +179,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="High end"
-            android:id="@+id/checkBox12"
+            android:id="@+id/gpu3"
             android:layout_column="1"
             android:checked="false" />
             </RadioGroup>
@@ -201,7 +201,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HDD"
-                android:id="@+id/checkBox13"
+                android:id="@+id/storage1"
                 android:layout_column="0"
                 android:checked="false" />
 
@@ -209,7 +209,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SSD"
-                android:id="@+id/checkBox14"
+                android:id="@+id/storage2"
                 android:layout_column="0"
                 android:checked="false" />
 
@@ -217,7 +217,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HDD + SSD"
-                android:id="@+id/checkBox15"
+                android:id="@+id/storage3"
                 android:layout_column="0"
                 android:checked="false" />
             </RadioGroup>
@@ -239,21 +239,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="400W"
-                android:id="@+id/checkBox16"
+                android:id="@+id/ps1"
                 android:checked="false" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="600W"
-                android:id="@+id/checkBox17"
+                android:id="@+id/ps2"
                 android:checked="false" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1200W"
-                android:id="@+id/checkBox18"
+                android:id="@+id/ps3"
                 android:checked="false" />
             </RadioGroup>
         </GridLayout>
