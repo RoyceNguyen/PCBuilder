@@ -263,7 +263,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="177dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Total:"
@@ -272,16 +272,20 @@
                 android:textStyle="bold"
                 android:layout_columnSpan="1"
                 android:layout_column="0"
-                android:gravity="right"
-                android:paddingRight="6dp" />
+                android:gravity="left"
+                android:paddingRight="6dp"
+                android:textSize="@dimen/titleText" />
 
             <TextView
-            android:layout_width="188dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/totalTextView"
                 android:elevation="4dp"
-                android:background="@color/buttonColor" />
+                android:background="@color/buttonColor"
+                android:gravity="center_vertical|center_horizontal"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/regText" />
         </TableRow>
 
     </LinearLayout>
