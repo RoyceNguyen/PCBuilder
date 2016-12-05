@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="rnb.pcbuilder.CostFragment"
-    android:background="@color/backgroundColor">
+    android:background="@color/backgroundColor"
+    android:fillViewport="false">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -260,7 +261,8 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -276,15 +278,17 @@
                 android:paddingRight="6dp"
                 android:textSize="@dimen/titleText" />
 
+
             <TextView
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/totalTextView"
-                android:elevation="4dp"
                 android:background="@color/buttonColor"
+                android:elevation="4dp"
                 android:gravity="center_vertical|center_horizontal"
                 android:textAlignment="gravity"
+
                 android:textSize="@dimen/regText" />
         </TableRow>
 
