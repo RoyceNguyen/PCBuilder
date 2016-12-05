@@ -69,7 +69,7 @@ public class TutorialFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tutorial, container, false);
-        mSectionsPagerAdapter = new SectionPagerAdapter(getActivity().getSupportFragmentManager());
+        mSectionsPagerAdapter = new SectionPagerAdapter(getChildFragmentManager());
         mViewPager = (ViewPager)  view.findViewById(R.id.tutorialContent);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         return view;
