@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="rnb.pcbuilder.CostFragment"
-    android:background="@color/backgroundColor">
+    android:background="@color/backgroundColor"
+    android:fillViewport="false">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -32,45 +33,48 @@
             android:textColor="@color/textColor"
             android:textSize="@dimen/titleText"
             android:textStyle="bold"
-            android:padding="@dimen/titleMargin" />
+            android:paddingBottom="@dimen/titleMargin" />
 
+            <RadioGroup android:id="@+id/radioGroup1">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="CPU"
-            android:id="@+id/textView18"
+            android:id="@+id/cpuText"
             android:layout_column="0"
             android:layout_row="1"
             android:textStyle="bold"
             android:paddingRight="80dp" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dual Core"
-            android:id="@+id/checkBox"
+            android:id="@+id/cpu1"
             android:layout_column="0"
             android:paddingRight="80dp" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quad Core"
-            android:id="@+id/checkBox2"
+            android:id="@+id/cpu2"
             android:layout_column="0"
             android:checked="false"
             android:paddingRight="80dp" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hexa Core"
-            android:id="@+id/checkBox3"
+            android:id="@+id/cpu3"
             android:layout_column="0"
             android:checked="false"
             android:paddingRight="80dp" />
+            </RadioGroup>
 
+            <RadioGroup android:id="@+id/radioGroup2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,29 +85,32 @@
             android:layout_row="1"
             android:textStyle="bold" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Low end"
-            android:id="@+id/checkBox4"
+            android:id="@+id/mb1"
             android:layout_column="1"
             android:checked="false" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mid tier"
-            android:id="@+id/checkBox5"
+            android:id="@+id/mb2"
             android:layout_column="1"
             android:checked="false" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="High end"
-            android:id="@+id/checkBox6"
+            android:id="@+id/mb3"
             android:layout_column="1"
             android:checked="false" />
+            </RadioGroup>
+
+            <RadioGroup android:id="@+id/radioGroup3">
 
         <TextView
             android:layout_width="wrap_content"
@@ -115,29 +122,32 @@
             android:paddingTop="20dp"
             android:textStyle="bold" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4 GB"
-            android:id="@+id/checkBox7"
+            android:id="@+id/ram1"
             android:layout_column="0"
             android:checked="false" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="8 GB"
-            android:id="@+id/checkBox8"
+            android:id="@+id/ram2"
             android:layout_column="0"
             android:checked="false" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="16 GB"
-            android:id="@+id/checkBox9"
+            android:id="@+id/ram3"
             android:layout_column="0"
             android:checked="false" />
+            </RadioGroup>
+
+            <RadioGroup android:id="@+id/radioGroup4">
 
         <TextView
             android:layout_width="wrap_content"
@@ -147,31 +157,35 @@
             android:id="@+id/textView21"
             android:layout_column="1"
             android:layout_row="5"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:paddingTop="20dp" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Low end"
-            android:id="@+id/checkBox11"
+            android:id="@+id/gpu1"
             android:layout_column="1"
             android:checked="false" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mid tier"
-            android:id="@+id/checkBox10"
+            android:id="@+id/gpu2"
             android:layout_column="1"
             android:checked="false" />
 
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="High end"
-            android:id="@+id/checkBox12"
+            android:id="@+id/gpu3"
             android:layout_column="1"
             android:checked="false" />
+            </RadioGroup>
+
+            <RadioGroup android:id="@+id/radioGroup5">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -184,29 +198,32 @@
                 android:paddingTop="20dp"
                 android:textStyle="bold" />
 
-            <CheckBox
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HDD"
-                android:id="@+id/checkBox13"
+                android:id="@+id/storage1"
                 android:layout_column="0"
                 android:checked="false" />
 
-            <CheckBox
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SSD"
-                android:id="@+id/checkBox14"
+                android:id="@+id/storage2"
                 android:layout_column="0"
                 android:checked="false" />
 
-            <CheckBox
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HDD + SSD"
-                android:id="@+id/checkBox15"
+                android:id="@+id/storage3"
                 android:layout_column="0"
                 android:checked="false" />
+            </RadioGroup>
+
+            <RadioGroup android:id="@+id/radioGroup6">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -216,37 +233,39 @@
                 android:id="@+id/textView24"
                 android:textStyle="bold"
                 android:layout_column="1"
-                android:layout_row="10" />
+                android:layout_row="10"
+                android:paddingTop="20dp" />
 
-            <CheckBox
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="400W"
-                android:id="@+id/checkBox16"
+                android:id="@+id/ps1"
                 android:checked="false" />
 
-            <CheckBox
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="600W"
-                android:id="@+id/checkBox17"
+                android:id="@+id/ps2"
                 android:checked="false" />
 
-            <CheckBox
+            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1200W"
-                android:id="@+id/checkBox18"
+                android:id="@+id/ps3"
                 android:checked="false" />
-
+            </RadioGroup>
         </GridLayout>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:weightSum="1">
 
             <TextView
-                android:layout_width="177dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Total:"
@@ -255,16 +274,22 @@
                 android:textStyle="bold"
                 android:layout_columnSpan="1"
                 android:layout_column="0"
-                android:gravity="right"
-                android:paddingRight="6dp" />
+                android:gravity="left"
+                android:paddingRight="6dp"
+                android:textSize="@dimen/titleText" />
+
 
             <TextView
-            android:layout_width="188dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/totalTextView"
+                android:background="@color/buttonColor"
                 android:elevation="4dp"
-                android:background="@color/buttonColor" />
+                android:gravity="center_vertical|center_horizontal"
+                android:textAlignment="gravity"
+
+                android:textSize="@dimen/regText" />
         </TableRow>
 
     </LinearLayout>
