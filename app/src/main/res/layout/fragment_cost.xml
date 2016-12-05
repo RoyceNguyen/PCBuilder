@@ -34,7 +34,7 @@
             android:textStyle="bold"
             android:padding="@dimen/titleMargin" />
 
-            <RadioGroup>
+            <RadioGroup android:id="@+id/radioGroup1">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
             android:paddingRight="80dp" />
             </RadioGroup>
 
-            <RadioGroup>
+            <RadioGroup android:id="@+id/radioGroup2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
             android:checked="false" />
             </RadioGroup>
 
-            <RadioGroup>
+            <RadioGroup android:id="@+id/radioGroup3">
 
         <TextView
             android:layout_width="wrap_content"
@@ -146,7 +146,7 @@
             android:checked="false" />
             </RadioGroup>
 
-            <RadioGroup>
+            <RadioGroup android:id="@+id/radioGroup4">
 
         <TextView
             android:layout_width="wrap_content"
@@ -184,7 +184,7 @@
             android:checked="false" />
             </RadioGroup>
 
-            <RadioGroup>
+            <RadioGroup android:id="@+id/radioGroup5">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -222,7 +222,7 @@
                 android:checked="false" />
             </RadioGroup>
 
-            <RadioGroup>
+            <RadioGroup android:id="@+id/radioGroup6">
 
             <TextView
                 android:layout_width="wrap_content"
