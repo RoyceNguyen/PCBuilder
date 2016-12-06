@@ -122,9 +122,9 @@ public class TutorialFragment extends Fragment {
         {
             switch(position){
                 case 0: return FactFragment.newInstance("Step 1:\n Get the proper screwdriver - Usually a Phillips head screwdriver");
-                case 1: return FactFragment.newInstance("Step 2:\n Open' the case - Unscrew the thumbscrews on either side to open the case up");
+                case 1: return FactFragment.newInstance("Step 2:\n Open the case - Unscrew the thumbscrews on either side to open the case up");
                 case 2: return FactFragment.newInstance("Step 3:\n Install the CPU - Remove the CPU from the plastic and DO NOT touch the gold pins on the bottom. On the motherboard, push the CPU cover up then the lever on the side. Place the CPU in gently using the arrows to line it up");
-                case 3: return FactFragment.newInstance("Step 4:\n Add the heatsink - The heastsink will fit right over the processor. It has 4 screws ");
+                case 3: return FactFragment.newInstance("Step 4:\n Add the heatsink - The heastsink will fit right over the processor. It has 4 screws");
                 case 4: return FactFragment.newInstance("Step 5:\n Install the RAM - Unlock the clips on the RAM slots, install the RAM in the correct slot then push down on both sides of the module");
                 case 5: return FactFragment.newInstance("Step 6:\n Install the motherboard - Place the motherboard in the case and place it in matching up with the ports. Secure the motherboard to the case once it is placed in position with the screws it came with");
                 case 6: return FactFragment.newInstance("Step 7:\n Install the graphics card - Remove the expansion slot covers on the back of the case, slide the GPU into place then push it down into the slot on the motherboard.");
