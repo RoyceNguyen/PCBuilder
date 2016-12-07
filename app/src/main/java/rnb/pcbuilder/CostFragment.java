@@ -92,7 +92,7 @@ public class CostFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cost, container, false);
-        TextView totalTextView = (TextView)view.findViewById(R.id.totalTextView);
+        totalTextView = (TextView)view.findViewById(R.id.totalTextView);
         radioGroup6 = (RadioGroup)view.findViewById(R.id.radioGroup6);
          radioGroup5 = (RadioGroup)view.findViewById(R.id.radioGroup5);
          radioGroup4 = (RadioGroup)view.findViewById(R.id.radioGroup4);
