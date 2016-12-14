@@ -22,6 +22,13 @@ import java.text.NumberFormat;
  * Use the {@link CostFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+/**
+ * @author Royce
+ * I helped with styling
+ * @author Blaze
+ * I did the coding and styling for this fragment
+ */
 public class CostFragment extends Fragment {
     private double totalAmount = 0.0;
     private TextView totalTextView;

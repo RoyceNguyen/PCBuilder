@@ -23,6 +23,12 @@ public class MainActivity extends AppCompatActivity
         TutorialFragment.OnFragmentInteractionListener,
         FactFragment.OnFragmentInteractionListener {
 
+    /**
+     * @author Royce
+     * I did the coding for this fragment
+     * @author Blaze
+     * I did the styling for this fragment
+     */
     FragmentManager fm = getSupportFragmentManager();
 
     @Override
